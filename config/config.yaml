@@ -1,0 +1,68 @@
+# Configurações do Projeto
+
+# Paths
+paths:
+  data_dir: "data"
+  models_dir: "models"
+  logs_dir: "logs"
+
+# Dataset
+dataset:
+  name: "FER2013"
+  num_classes: 7
+  classes:
+    - "Raiva"      # Angry
+    - "Nojo"       # Disgust
+    - "Medo"       # Fear
+    - "Feliz"      # Happy
+    - "Triste"     # Sad
+    - "Surpreso"   # Surprise
+    - "Neutro"     # Neutral
+  img_size: [48, 48]
+  color_mode: "grayscale"
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+
+# Model Architecture
+model:
+  name: "EmotionCNN"
+  input_shape: [48, 48, 1]
+  architecture: "custom_cnn"  # options: custom_cnn, mobilenet, resnet
+  dropout_rate: 0.5
+
+# Training
+training:
+  batch_size: 64
+  epochs: 50
+  learning_rate: 0.001
+  optimizer: "adam"
+  loss: "categorical_crossentropy"
+  metrics: ["accuracy"]
+  early_stopping:
+    enabled: true
+    patience: 10
+    monitor: "val_loss"
+
+# Data Augmentation
+augmentation:
+  enabled: true
+  rotation_range: 20
+  width_shift_range: 0.2
+  height_shift_range: 0.2
+  horizontal_flip: true
+  zoom_range: 0.2
+
+# Real-time Detection
+detection:
+  confidence_threshold: 0.5
+  face_detector: "haarcascade"  # options: haarcascade, dnn, mtcnn
+  camera_id: 0
+  fps: 30
+
+# Sensory Overload (Future Module)
+sensory_overload:
+  enabled: false
+  brightness_threshold: 200
+  motion_threshold: 0.7
+  pattern_complexity_threshold: 0.8
