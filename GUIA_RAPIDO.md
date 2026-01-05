@@ -58,36 +58,36 @@ python src/app/realtime_detector.py --model models/emotion_cnn_XXXXXX_best.h5
 ```
 neuroguide/
 │
-├── config/config.yaml           # ⚙️ CONFIGURAÇÕES CENTRAIS
+├── config/config.yaml           # CONFIGURAÇÕES CENTRAIS
 │                                # Altere aqui: batch_size, epochs, learning_rate, etc.
 │
-├── data/                        # 📊 DADOS
+├── data/                       # DADOS
 │   └── fer2013.csv             # Dataset (você precisa baixar)
 │
-├── models/                      # 🧠 MODELOS TREINADOS
+├── models/                     # MODELOS TREINADOS
 │   ├── *_best.h5               # Melhor modelo (maior val_accuracy)
 │   ├── *_final.h5              # Modelo final após todas as epochs
 │   └── *_history.npz           # Histórico de treinamento
 │
 ├── src/
-│   ├── emotion_recognition/     # 😊 MÓDULO PRINCIPAL
+│   ├── emotion_recognition/    # MÓDULO PRINCIPAL
 │   │   ├── model.py            # Arquitetura da CNN
 │   │   ├── data_loader.py      # Carregamento e preprocessamento
 │   │   └── train.py            # Script de treinamento
 │   │
-│   ├── app/                     # 📹 APLICAÇÃO EM TEMPO REAL
+│   ├── app/                     # APLICAÇÃO EM TEMPO REAL
 │   │   └── realtime_detector.py
 │   │
-│   ├── sensory_overload/        # 🔮 MÓDULO FUTURO
+│   ├── sensory_overload/       # MÓDULO FUTURO
 │   │   └── README.md           # Planejamento
 │   │
-│   └── utils/                   # 🛠️ UTILITÁRIOS
+│   └── utils/                  # UTILITÁRIOS
 │       └── config_loader.py    # Carregador de configurações
 │
-├── notebooks/                   # 📓 ANÁLISES E EXPERIMENTOS
+├── notebooks/                   # ANÁLISES E EXPERIMENTOS
 │   └── 01_exploracao_dataset.ipynb
 │
-└── tests/                       # ✅ TESTES (futuro)
+└── tests/                       # TESTES (futuro)
 ```
 
 ---
@@ -177,33 +177,3 @@ python src/app/realtime_detector.py \
    - Implementar detector de sobrecarga sensorial
    - Combinar ambos os módulos
    - Criar interface web com Streamlit
-
----
-
-## Recursos de Aprendizado
-
-**Deep Learning Basics:**
-- https://www.tensorflow.org/tutorials
-- https://keras.io/getting_started/
-
-**CNNs para Visão Computacional:**
-- https://cs231n.stanford.edu/
-
-**Reconhecimento de Emoções:**
-- FER-2013 Paper: https://arxiv.org/abs/1307.0414
-
-**Autismo e Tecnologia:**
-- Research papers sobre emotion recognition para autismo
-- Guidelines de acessibilidade para neurodiversidade
-
----
-
-## Dicas para o Projeto da Pós
-
-1. **Documente o processo**: Registre cada experimento
-2. **Compare abordagens**: Teste diferentes arquiteturas
-3. **Analise resultados**: Não apenas a acurácia, mas quais emoções confundem o modelo
-4. **Contextualize**: Explique como isso ajuda pessoas com autismo
-5. **Considere ética**: Privacidade, consentimento, bias nos dados
-
-Boa sorte no projeto! 🚀
